@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Post} from './post';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +20,12 @@ export class AppComponent {
     new Post("Ana", "Meu post", "Sub Ana", "joao@gmail.com", "Minha msg"),
     new Post("Bia", "Meu post", "Sub Bia", "joao@gmail.com", "Minha msg"),
   ];
+
+  constructor(public dialog: MatDialog){} 
+
+  openDialog(){
+    const dialogref = this.dialog.open(PostDialogComponent, {
+      
+    });
+  }
 }
