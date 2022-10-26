@@ -24,8 +24,14 @@ export class AppComponent {
   constructor(public dialog: MatDialog){} 
 
   openDialog(){
-    const dialogref = this.dialog.open(PostDialogComponent, {
-      
+    const dialogref = this.dialog.open(PostDialogComponent, {      
     });
+    dialogref.afterClosed().subscribe(
+      (result) => {
+        if (result) {
+          
+        }
+      }
+    );
   }
 }
